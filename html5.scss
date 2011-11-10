@@ -27,3 +27,11 @@
     -khtml-opacity: $value; /* webkit */
     opacity: $value; /* css 3 */
 }
+
+@mixin rotate($value) {
+	-webkit-transform: rotate(#{$value}deg);
+	-moz-transform: rotate(#{$value}deg);
+	-o-transform: rotate(#{$value}deg);/* For Opera*/
+	-khtml-transform: rotate(#{$value}deg);/* For Linux*/
+	-ms-transform:rotate(#{$value}deg);	 /* for ie */
+}
