@@ -1,0 +1,16 @@
+$base-font-size-px: 12;
+
+@mixin body-reset-font-size() {
+    $percentage: $base-font-size-px/16;
+    font: #{$percentage}%/1em;
+}
+
+@mixin font-px-to-em($font-size, $line-height: -1) {
+    $font-size-em: $font-size/$base-font-size-px;
+
+	font-size: #{$font-size-em}em;
+
+	@if ($line-height > -1)	{
+	    line-height: #{$line-height/$font-size}em;
+	}
+}
