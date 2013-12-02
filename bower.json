@@ -1,0 +1,16 @@
+{
+  "name": "sass-helpers",
+  "version": "0.0.1",
+  "homepage": "https://github.com/joppe/sass",
+  "authors": [
+    "Joppe Aarts <joppe@apestaartje.info>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
