@@ -37,7 +37,7 @@
         $bottom-right-radius: nth($radius, 3);
         $bottom-left-radius: nth($radius, 4);
     }
-    @include add-vendor-prefixes(border-radius, #{$top-left-radius}px #{$top-right-radius}px #{$bottom-right-radius}px #{$bottom-left-radius}px);
+    @include add-vendor-prefixes(border-radius, $top-left-radius $top-right-radius $bottom-right-radius $bottom-left-radius);
 }
 
 /**
@@ -79,15 +79,15 @@
  * @param string $property
  * @param number $duration [ease linear ease-in ease-out ease-in-out]
  * @param string $timing-function
- * @param number $delay default:0
+ * @param number $delay default:0s
  */
-@mixin transition($property, $duration, $timing-function, $delay:0) {
+@mixin transition($property, $duration, $timing-function, $delay:0s) {
     @include add-vendor-prefixes(transition-property, $property);
     @include add-vendor-prefixes(transition-duration, #{$duration}s);
     @include add-vendor-prefixes(transition-timinig-function, $timing-function);
 
     @if $delay > 0 {
-        @include add-vendor-prefixes(transition-delay, #{$delay}s);
+        @include add-vendor-prefixes(transition-delay, $delay);
     }
 }
 
@@ -101,9 +101,9 @@
  */
 @mixin box-shadow($horizontal, $vertical, $blur, $spread, $color, $inset: '') {
     @if $inset == 'inset' {
-        @include add-vendor-prefixes(box-shadow, $inset #{$horizontal}px #{$vertical}px #{$blur}px #{$spread}px $color);
+        @include add-vendor-prefixes(box-shadow, $inset $horizontal $vertical $blur $spread $color);
     } @else {
-        @include add-vendor-prefixes(box-shadow, #{$horizontal}px #{$vertical}px #{$blur}px #{$spread}px $color);
+        @include add-vendor-prefixes(box-shadow, $horizontal $vertical $blur $spread $color);
     }
 }
 
@@ -114,7 +114,7 @@
  * @param string $color
  */
 @mixin text-shadow($horizontal, $vertical, $blur, $color) {
-    @include add-vendor-prefixes(text-shadow, #{$horizontal}px #{$vertical}px #{$blur}px $color);
+    @include add-vendor-prefixes(text-shadow, $horizontal $vertical $blur $color);
 }
 
 /**
